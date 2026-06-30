@@ -1,0 +1,63 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// ==================== TYPES ====================
+
+using ll  = long long;
+using ull = unsigned long long;
+using ld  = long double;
+
+using pii = pair<int, int>;
+using pll = pair<long long, long long>;
+
+// ==================== CONSTANTS ====================
+
+constexpr int INF = 1e9;
+constexpr ll INF64 = 1e18;
+constexpr int MOD = 1e9 + 7;
+
+// ==================== SHORTCUTS ====================
+
+#define pb push_back
+#define fi first
+#define se second
+#define all(x) (x).begin(), (x).end()
+
+// ==================== FAST IO ====================
+
+inline void fastio() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+}
+
+// ==================== SOLUTION ====================
+int n,s;
+vector<ll>A;
+ll tong;
+void ppz( ll i)
+{
+    if ( i > n)
+    {
+        for ( auto p : A)
+        {
+            tong += p;
+        }
+        if (tong == s)
+            {
+                for( auto x : A) cout << x << " ";
+                cout << endl;
+            }
+        tong = 0;
+        return;
+    }
+    A.push_back(i);
+    ppz(i+1);
+    A.pop_back();
+    ppz(i+1);
+}
+int main()
+{
+    cin >> n >> s;
+    ppz(1);
+}
