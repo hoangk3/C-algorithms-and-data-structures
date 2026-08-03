@@ -1,2 +1,2 @@
 # C-algorithms-and-data-structures
-own studying
+idiot user learning cpp for national olyimpic algorithims
